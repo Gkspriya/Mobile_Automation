@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Parallel Testing Suite]">
+  <test parallel="none" name="TestTwo(failed)">
+    <classes>
+      <class name="demo.scripts.MarketNewsReports">
+        <methods>
+          <include name="test_Login"/>
+          <include name="tearDown"/>
+          <include name="report"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- demo.scripts.MarketNewsReports -->
+      <class name="demo.scripts.UnlistedCorporate">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="UnlistedCorporateSukuk"/>
+          <include name="test_Login"/>
+        </methods>
+      </class> <!-- demo.scripts.UnlistedCorporate -->
+      <class name="demo.scripts.PrivacyPolicy">
+        <methods>
+          <include name="test_Login"/>
+        </methods>
+      </class> <!-- demo.scripts.PrivacyPolicy -->
+    </classes>
+  </test> <!-- TestTwo(failed) -->
+</suite> <!-- Failed suite [Parallel Testing Suite] -->

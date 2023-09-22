@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Default suite]">
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="demo.scripts.Mobilebrowser">
+        <methods>
+          <include name="test_Login"/>
+          <include name="tearDown"/>
+          <include name="report"/>
+          <include name="MarketElementTest"/>
+          <include name="mobileSetUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- demo.scripts.Mobilebrowser -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

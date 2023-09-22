@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]">
+  <test parallel="none" name="Test(failed)">
+    <classes>
+      <class name="demo.scripts.SaveTestNGResultToExcel">
+        <methods>
+          <include name="LaunchWebsite"/>
+          <include name="DoLogin"/>
+          <include name="FillLoginDetails"/>
+          <include name="suiteSetUp"/>
+        </methods>
+      </class> <!-- demo.scripts.SaveTestNGResultToExcel -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
