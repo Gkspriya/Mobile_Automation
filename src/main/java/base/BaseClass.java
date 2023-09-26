@@ -37,6 +37,7 @@ public class BaseClass {
 	public static AndroidDriver androiddriver=null;
 	
 	public static DesiredCapabilities dc=null;
+	public static ConfigurationSupport mp=new ConfigurationSupport(FrameworkConstants.getMobilepropertiespath());
 
 	public static WebDriver getDriver() {
 		return driver.get();
@@ -44,7 +45,7 @@ public class BaseClass {
 	public static AndroidDriver getandroidDriver() {
 		 try {
 			 if(androiddriver==null) {
-		    	androiddriver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),dc);
+		    	androiddriver=new AndroidDriver(new URL(mp.getProperty("appiumserver_url")),dc);
 			 }
 		    }
 		    catch(Exception e) {
@@ -78,13 +79,13 @@ public class BaseClass {
 		//if(TestEnvironment.contains("Mobile")) {
 				
 			dc=new DesiredCapabilities();
-			dc.setCapability("device","Android");
-		    dc.setCapability(CapabilityType.PLATFORM_NAME,"Android");
-		    dc.setCapability(MobileCapabilityType.UDID,"RZCT30YKCCL");
-		    dc.setCapability("deviceName", "samsung");
-		    dc.setCapability("platformVersion","12.5");
-		    dc.setCapability(CapabilityType.BROWSER_NAME,"chrome");
-		    dc.setCapability("chromedriverExecutable","C:\\New folder\\AutoFramework\\executables\\chromedriver117.exe");
+			dc.setCapability("device",mp.getProperty("device"));
+		    dc.setCapability(CapabilityType.PLATFORM_NAME,mp.getProperty("platform"));
+		    dc.setCapability(MobileCapabilityType.UDID,mp.getProperty("Udid"));
+		    dc.setCapability("deviceName",mp.getProperty("Devicename"));
+		    dc.setCapability("platformVersion",mp.getProperty("platformversion"));
+		    dc.setCapability(CapabilityType.BROWSER_NAME,mp.getProperty("browsername"));
+		    dc.setCapability("chromedriverExecutable",mp.getProperty("chromeexecutablepath"));
 	//}
 		   
 		

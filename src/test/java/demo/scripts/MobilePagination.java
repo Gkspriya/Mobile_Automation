@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Reporter;
 import base.BaseClass;
-
+import pageObjects.MobileHomePage;
 import org.testng.annotations.Listeners;
 
 import io.appium.java_client.AppiumDriver;
@@ -30,13 +30,13 @@ import utilities.WebDriverActions;
 
 
 @Listeners(utilities.Listener.class)
-public class Mobilebrowser extends BaseClass {
+public class MobilePagination extends BaseClass {
 	MobileActions MA;
 	SoftAssert s;
 	ExcelLibrary excel;
 	MobileHomePage hp;
 	IssuersPage ip;
-		
+	
 	@BeforeClass
 	public void test_Login() throws Exception {
 		
@@ -45,22 +45,23 @@ public class Mobilebrowser extends BaseClass {
 	}
 
 	@Test(priority=0, enabled=true)
-	public void MarketElementTest() throws Exception{
+	public void PaginationObject_Verification() throws Exception{
 		
 		MA=new MobileActions();
 		s=new SoftAssert();
 		excel=new ExcelLibrary();
 		hp=new MobileHomePage();
 		ip=new IssuersPage();
+		Reporter.pass("Home page",true);
 		hp.selectMainMenu();
-		Reporter.pass("Main Menu is clicked",true);
-	        hp.languageSelect();
-        	hp.selectMarketNewsMenu();
-		Reporter.pass("Market News & Reports is selected",true);
+		hp.languageSelect();
+        hp.selectMarketNewsMenu();
+        Reporter.pass("Market News & Reports is selected",true);
 		hp.selectIssuerMenu();
 		Reporter.pass("Issuer & Financial Advisor Announcements is selected",true);
-	        hp.scrolltonavigate();
-	    Reporter.pass("Scroll To the Page Navigater Element",true);
+		Reporter.pass("Bread Crumbs:" + MA.gettext(hp.breadCrumbs), true);
+	    hp.scrolltonavigate();
+	    Reporter.pass("Scroll To View Pagination Object",true);
 		
 	}
 	

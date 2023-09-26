@@ -8,6 +8,7 @@ import utilities.MobileActions;
 
 public class MobileHomePage {
 	MobileActions MA=new MobileActions();
+	public By breadCrumbs=By.xpath("//div[contains(@class,'breadcrumbs')]/ul");
 	public By Mainmenu=By.xpath("//*[@class='menuIcon']");
 	
 	public By MarketNewsandReportMenu=By.xpath("//*[contains(text(),'Market News & Reports')]");
@@ -68,5 +69,9 @@ public class MobileHomePage {
 		
 		MA.scrolltoelement(PageNavigatorbtn);
     
+	}
+	public void verifyPagination() throws Exception {
+		
+		MA.isDisplayed(PageNavigatorbtn);
 	}
 }

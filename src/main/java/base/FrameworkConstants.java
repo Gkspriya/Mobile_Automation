@@ -43,6 +43,9 @@ public final class FrameworkConstants {
 	public static String getGlobalpropertiespath() {
 		return GLOBALPROPERTIESPATH;
 	}
+	public static String getMobilepropertiespath() {
+		return MOBILEPROPERTIESPATH;
+	}
 	
 	public static int getImplicit() {
 		ConfigurationSupport cs=new ConfigurationSupport(getGlobalpropertiespath());
@@ -98,6 +101,7 @@ public final class FrameworkConstants {
 	private static final String EXCELREPORTFOLDERPATH="C:\\Tadawul\\ExcelReports";
 	private static String extentReportFilePath="";
 	private static String excelReportFilePath="";
+	private static final String MOBILEPROPERTIESPATH=System.getProperty("user.dir")+"\\configuration files\\mobile.properties";
 	private static final String GLOBALPROPERTIESPATH=System.getProperty("user.dir")+"\\configuration files\\global.properties";
 	private static final String DOWNLOADPATH=System.getProperty("user.home")+"\\Downloads";
 	

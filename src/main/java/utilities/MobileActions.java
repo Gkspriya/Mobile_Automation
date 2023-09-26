@@ -43,8 +43,14 @@ public final class MobileActions extends BaseClass {
 	}
 	public boolean isDisplayed(By by) {
 		WebElement element = androiddriver.findElement(by);
-		boolean bool= element.isDisplayed();
-		return bool;
+		boolean bn= element.isDisplayed();
+		if(bn==false) {
+			System.out.println("Element is not in the page");
+		}
+		else {
+			System.out.println("Element is visible");
+		}
+		return bn;
 	}
 	
 	public void scrolldown() {
