@@ -54,7 +54,9 @@ public class StaticPage {
 	}
 	
 	public int getFooterMenuCount() {
+		
 		return ui.ElementsCount(footerMenuList);
+	
 		
 	}
 	

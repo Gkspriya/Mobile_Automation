@@ -36,9 +36,10 @@ public class BaseClass {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static AndroidDriver androiddriver=null;
 	
+	
 	public static DesiredCapabilities dc=null;
 	public static ConfigurationSupport mp=new ConfigurationSupport(FrameworkConstants.getMobilepropertiespath());
-
+	
 	public static WebDriver getDriver() {
 		return driver.get();
 	}
@@ -76,7 +77,7 @@ public class BaseClass {
 	}
 	@BeforeSuite(alwaysRun = true)
 	public void mobileSetUp() throws MalformedURLException{
-		//if(TestEnvironment.contains("Mobile")) {
+		if(TestEnvironment.contains("Mobile")) {
 				
 			dc=new DesiredCapabilities();
 			dc.setCapability("device",mp.getProperty("device"));
@@ -86,14 +87,14 @@ public class BaseClass {
 		    dc.setCapability("platformVersion",mp.getProperty("platformversion"));
 		    dc.setCapability(CapabilityType.BROWSER_NAME,mp.getProperty("browsername"));
 		    dc.setCapability("chromedriverExecutable",mp.getProperty("chromeexecutablepath"));
-	//}
+	}
 		   
 		
 	}
 
 	@BeforeSuite(alwaysRun = true)
 	public void setUp() throws MalformedURLException {
-       if(TestEnvironment.contains("Web")) {
+       if(TestEnvironment=="Web") {
 		if (Objects.isNull(getDriver()))
 			switch (browser) {
 

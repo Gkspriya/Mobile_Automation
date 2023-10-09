@@ -3,16 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="demo.scripts.MobilePaginationNegativetest">
+      <class name="demo.scripts.MobilePagination">
         <methods>
-          <include name="test_Login"/>
-          <include name="PaginationObject_Verification"/>
           <include name="tearDown"/>
+          <include name="PaginationObject_Verification"/>
           <include name="report"/>
+          <include name="test_Login"/>
           <include name="mobileSetUp"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- demo.scripts.MobilePaginationNegativetest -->
+      </class> <!-- demo.scripts.MobilePagination -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
